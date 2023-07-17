@@ -1,50 +1,61 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<!-- Diseño del HTML utilizando Bootstrap -->
 	<meta charset="utf-8">
 	<title>servidor acelerometro</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-	<style media="screen">
-	html, body{
-		height: 100%;
-	}
-	body{
-		display: flex; 
-		align-items: center;
-		background: #DC143C;
-	}
-	</style>
-	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<!-- Se agrega la biblioteca de Chart.js -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<!-- Se configura el estilo del sitio -->
+	<link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body>
-	<h1>DETECTOR DE SISMOS</h1>
-	
+
 	<div class="container">
 		<div class="row justify-content-center align-self-center">
+			<h1>DETECTOR DE SISMOS</h1>
 			<div class="card">
 				<div class="card header">
 					Valores en x,y,z obtenidos por el acelerómetro
 				</div>
-				<h2 id="aceleracion" class ="display-3 p-4"></h2> 
+				<h2 id="aceleracion" class="display-3 p-4"></h2>
+			</div>
+		</div>
+		<div class="row justify-content-center align-self-center">
+			<h3>EJE X</h3>
+			<div>
+				<canvas id="myChart" width="300" height="300" style="background-color: #FFFCCD"></canvas>
+			</div>
+		</div>
+		<div class="row justify-content-center align-self-center">
+			<h4>EJE Y</h4>
+			<div>
+				<canvas id="myChart2" width="300" height="300" style="background-color: #FFFCCD"></canvas>
+			</div>
+		</div>
+		<div class="row justify-content-center align-self-center">
+			<h5>EJE Z</h5>
+			<div>
+				<canvas id="myChart3" width="300" height="300" style="background-color: #FFFCCD"></canvas>
+			</div>
+		</div>
+		<div class="row justify-content-center align-self-center">
+			<h6>CHEMS</h6>
+			<div>
+			<img src="img/chems.jpeg">	
 			</div>
 		</div>
 	</div>
 	<!-- Se agrega la ruta para la biblioteca de socket.io versión 4.5.1 -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js" charset="utf-8"></script>
-	<script>
-		<!-- Se inicializa la conexión de sockets creando una instancia socket -->
-		<!-- Para la conexión se agrega la IP de la Rasp y el puerto utilizado -->
-	var socket = io('http://192.168.1.93:8080');;
-	 
-	<!-- Se hace la interrupcion con el evento 'acel' y se reciben los datos -->
-	socket.on('acel', function(data){
-		<!-- Los datos se muestran por consola -->
-		console.log(data);
-		let acel = document.getElementById('aceleracion');
-		acel.innerHTML = data;
-});
+	<!--Se manda a llamar el archivo script.js para lectura de datos y gráfica-->
+	<script type="module" src="script/script.js"></script>
 
-	</script>
 </body>
+
 </html>
