@@ -24,16 +24,16 @@ socket.on('acel', function (data) {
 	console.log(ArrZ);
 
 	//SE CREA UN AUXILIAR PARA ARREGLO X de 10 VALORES
-	let auxX = new Array(20);
+	let auxX = new Array(100);
 
 	//SE CREA UN AUXILIAR PARA ARREGLO Y de 10 VALORES
-	let auxY = new Array(20);
+	let auxY = new Array(100);
 
 	//SE CREA UN AUXILIAR PARA ARREGLO Y de 10 VALORES
-	let auxZ = new Array(20);
+	let auxZ = new Array(100);
 
 	//SE CREA UN CONTADOR PARA RECORRER EL ARREGLO X
-	for (let i = 0; i < 19; i++) {
+	for (let i = 0; i < 99; i++) {
 		auxX[i + 1] = ArrX[i];
 		//console.log(`valores de aux en ciclo = ${aux}`);
 	}
@@ -42,7 +42,7 @@ socket.on('acel', function (data) {
 	ArrX[0] = data.x;
 
 	//SE CREA UN CONTADOR PARA RECORRER EL ARREGLO Y
-	for (let i = 0; i < 19; i++) {
+	for (let i = 0; i < 99; i++) {
 		auxY[i + 1] = ArrY[i];
 	}
 	ArrY = auxY;
@@ -50,7 +50,7 @@ socket.on('acel', function (data) {
 	ArrY[0] = data.y;
 
 	//SE CREA UN CONTADOR PARA RECORRER EL ARREGLO Z
-	for (let i = 0; i < 19; i++) {
+	for (let i = 0; i < 99; i++) {
 		auxZ[i + 1] = ArrZ[i];
 	}
 	ArrZ = auxZ;
@@ -81,20 +81,32 @@ const ctx3 = document.getElementById('myChart3');
 //Se crean las funciones con arreglos de 10 elementos.
 
 //ARREGLO DEL EJE X:
-let ArrX = new Array(20);
+let ArrX = new Array(100);
 console.log(ArrX);
 
 //ARREGLO DEL EJE Y:
-let ArrY = new Array(20);
+let ArrY = new Array(100);
 console.log(ArrY);
 
 //ARREGLO DEL EJE Z:
-let ArrZ = new Array(20);
+let ArrZ = new Array(100);
 console.log(ArrZ);
 
+//ARREGLO PARA EL GRAFICO EN EL EJE X
+function creaArreglo() {
+	var arregloxd = [];
+
+	for (let i = 0; i < 100; i++) {
+		arregloxd.push(i);
+	}
+	//console.log(arregloxd);
+	return arregloxd;
+
+}
+let nuevoArr = creaArreglo();
+
 //DISEÑO DEL GRÁFICO
-const labels = ['x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10',
-				'x11', 'x12', 'x13', 'x14', 'x15', 'x16', 'x17', 'x18', 'x19', 'x20'];
+const labels = nuevoArr;
 const data = {
 	labels: labels,
 	datasets: [
