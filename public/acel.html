@@ -11,6 +11,21 @@
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<!-- Se configura el estilo del sitio -->
 	<link rel="stylesheet" href="css/style.css">
+	<style type="text/css">
+		.chartBoxX{
+			width: 1200px;
+			height: 1400px;
+		}
+		.chartBoxY{
+			width: 1200px;
+			height: 1400px;
+		}
+		.chartBoxZ{
+			width: 1200px;
+			height: 1400px;
+		}
+		
+	</style>
 
 </head>
 
@@ -26,24 +41,20 @@
 				<h2 id="aceleracion" class="display-3 p-4"></h2>
 			</div>
 		</div>
-		<div class="row justify-content-center align-self-center">
+		<div class="row justify-content-center">
 			<h3>EJE X</h3>
-			<div>
-				<canvas id="myChart" width="300" height="300" style="background-color: #FFFCCD"></canvas>
+			<div class="chartBoxX">
+				<canvas id="myChart" style="background-color: #FFFCCD"></canvas>
 			</div>
-		</div>
-		<div class="row justify-content-center align-self-center">
 			<h4>EJE Y</h4>
-			<div>
-				<canvas id="myChart2" width="300" height="300" style="background-color: #FFFCCD"></canvas>
+			<div class="chartBoxY">
+				<canvas id="myChart2" style="background-color: #FFFCCD"></canvas>
 			</div>
-		</div>
-		<div class="row justify-content-center align-self-center">
 			<h5>EJE Z</h5>
-			<div>
-				<canvas id="myChart3" width="300" height="300" style="background-color: #FFFCCD"></canvas>
+			<div class="chartBoxZ">
+				<canvas id="myChart3" style="background-color: #FFFCCD"></canvas>
 			</div>
-		</div>
+		</div>	
 		<div class="row justify-content-center align-self-center">
 			<h6>CHEMS</h6>
 			<div>

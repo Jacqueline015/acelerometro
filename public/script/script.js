@@ -24,16 +24,16 @@ socket.on('acel', function (data) {
 	console.log(ArrZ);
 
 	//SE CREA UN AUXILIAR PARA ARREGLO X de 10 VALORES
-	let auxX = new Array(100);
+	let auxX = new Array(200);
 
 	//SE CREA UN AUXILIAR PARA ARREGLO Y de 10 VALORES
-	let auxY = new Array(100);
+	let auxY = new Array(200);
 
 	//SE CREA UN AUXILIAR PARA ARREGLO Y de 10 VALORES
-	let auxZ = new Array(100);
+	let auxZ = new Array(200);
 
 	//SE CREA UN CONTADOR PARA RECORRER EL ARREGLO X
-	for (let i = 0; i < 99; i++) {
+	for (let i = 0; i < 199; i++) {
 		auxX[i + 1] = ArrX[i];
 		//console.log(`valores de aux en ciclo = ${aux}`);
 	}
@@ -42,7 +42,7 @@ socket.on('acel', function (data) {
 	ArrX[0] = data.x;
 
 	//SE CREA UN CONTADOR PARA RECORRER EL ARREGLO Y
-	for (let i = 0; i < 99; i++) {
+	for (let i = 0; i < 199; i++) {
 		auxY[i + 1] = ArrY[i];
 	}
 	ArrY = auxY;
@@ -50,7 +50,7 @@ socket.on('acel', function (data) {
 	ArrY[0] = data.y;
 
 	//SE CREA UN CONTADOR PARA RECORRER EL ARREGLO Z
-	for (let i = 0; i < 99; i++) {
+	for (let i = 0; i < 199; i++) {
 		auxZ[i + 1] = ArrZ[i];
 	}
 	ArrZ = auxZ;
@@ -81,22 +81,22 @@ const ctx3 = document.getElementById('myChart3');
 //Se crean las funciones con arreglos de 10 elementos.
 
 //ARREGLO DEL EJE X:
-let ArrX = new Array(100);
+let ArrX = new Array(200);
 console.log(ArrX);
 
 //ARREGLO DEL EJE Y:
-let ArrY = new Array(100);
+let ArrY = new Array(200);
 console.log(ArrY);
 
 //ARREGLO DEL EJE Z:
-let ArrZ = new Array(100);
+let ArrZ = new Array(200);
 console.log(ArrZ);
 
 //ARREGLO PARA EL GRAFICO EN EL EJE X
 function creaArreglo() {
 	var arregloxd = [];
 
-	for (let i = 0; i < 100; i++) {
+	for (let i = 0; i < 200; i++) {
 		arregloxd.push(i);
 	}
 	//console.log(arregloxd);
@@ -147,19 +147,73 @@ const data3 = {
 //Se crea el gráfico para el eje X
 let graficaX = new Chart(ctx, {
 	type: 'line',
-	data: data
+	data: data,
+	options: {
+        scales: {
+			x:{
+				title: {
+					display: true,
+					text: 'tiempo [s]'
+				}
+			},
+            y: {
+                suggestedMin: -160,
+                suggestedMax: 50,
+				title: {
+					display: true,
+					text: 'aceleración [g]'
+				}
+            }
+        }
+    }
 });
 
 //Se crea el gráfico para el eje Y
 let graficaY = new Chart(ctx2, {
 	type: 'line',
-	data: data2
+	data: data2,
+	options: {
+        scales: {
+			x:{
+				title: {
+					display: true,
+					text: 'tiempo [s]'
+				}
+			},
+            y: {
+                suggestedMin: 80,
+                suggestedMax: 180,
+				title: {
+					display: true,
+					text: 'aceleración [g]'
+				}
+            }
+        }
+    }
 });
 
 //Se crea el gráfico para el eje Z
 let graficaZ = new Chart(ctx3, {
 	type: 'line',
-	data: data3
+	data: data3,
+	options: {
+        scales: {
+			x:{
+				title: {
+					display: true,
+					text: 'tiempo [s]'
+				}
+			},
+            y: {
+                suggestedMin: 740,
+                suggestedMax: 940,
+				title: {
+					display: true,
+					text: 'aceleración [g]'
+				}
+            }
+        }
+    }
 });
 
 
