@@ -11,20 +11,10 @@
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<!-- Se configura el estilo del sitio -->
 	<link rel="stylesheet" href="css/style.css">
-	<style type="text/css">
-		.chartBoxX{
+	<style>
+		.chartBox {
 			width: 1200px;
-			height: 1400px;
 		}
-		.chartBoxY{
-			width: 1200px;
-			height: 1400px;
-		}
-		.chartBoxZ{
-			width: 1200px;
-			height: 1400px;
-		}
-		
 	</style>
 
 </head>
@@ -41,26 +31,25 @@
 				<h2 id="aceleracion" class="display-3 p-4"></h2>
 			</div>
 		</div>
-		<div class="row justify-content-center">
-			<h3>EJE X</h3>
-			<div class="chartBoxX">
-				<canvas id="myChart" style="background-color: #FFFCCD"></canvas>
-			</div>
-			<h4>EJE Y</h4>
-			<div class="chartBoxY">
-				<canvas id="myChart2" style="background-color: #FFFCCD"></canvas>
-			</div>
-			<h5>EJE Z</h5>
-			<div class="chartBoxZ">
-				<canvas id="myChart3" style="background-color: #FFFCCD"></canvas>
-			</div>
-		</div>	
-		<div class="row justify-content-center align-self-center">
-			<h6>CHEMS</h6>
-			<div>
-			<img src="img/chems.jpeg">	
-			</div>
+		<h3>EJE X</h3>
+		<div class="chartBox">
+			<canvas id="myChart" style="background-color: #FFFCCD"></canvas>
 		</div>
+		<h4>EJE Y</h4>
+		<div class="chartBox">
+			<canvas id="myChart2" style="background-color: #FFFCCD"></canvas>
+		</div>
+		<h5>EJE Z</h5>
+		<div class="chartBox">
+			<canvas id="myChart3" style="background-color: #FFFCCD"></canvas>
+		</div>
+	</div>
+	<div class="row justify-content-center align-self-center">
+		<h6>CHEMS</h6>
+		<div>
+			<img src="img/chems.jpeg">
+		</div>
+	</div>
 	</div>
 	<!-- Se agrega la ruta para la biblioteca de socket.io versión 4.5.1 -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js" charset="utf-8"></script>
