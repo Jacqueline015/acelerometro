@@ -157,8 +157,8 @@ let graficaX = new Chart(ctx, {
 				}
 			},
             y: {
-                suggestedMin: -160,
-                suggestedMax: 50,
+                //suggestedMin: -160,
+                //suggestedMax: 50,
 				title: {
 					display: true,
 					text: 'aceleración [g]'
@@ -181,8 +181,8 @@ let graficaY = new Chart(ctx2, {
 				}
 			},
             y: {
-                suggestedMin: 80,
-                suggestedMax: 180,
+                //suggestedMin: 80,
+                //suggestedMax: 180,
 				title: {
 					display: true,
 					text: 'aceleración [g]'
@@ -205,8 +205,8 @@ let graficaZ = new Chart(ctx3, {
 				}
 			},
             y: {
-                suggestedMin: 740,
-                suggestedMax: 940,
+                //suggestedMin: 740,
+                //suggestedMax: 940,
 				title: {
 					display: true,
 					text: 'aceleración [g]'

@@ -59,12 +59,18 @@ parser.on('data', function (data) {
   //Se guardan los datos obtenidos en la variable acel
   //Se utiliza split para separar la cadena de caracteres de data (Los datos que llegan)
   let acel = data.split(' ');
-  //Se crea una vaiable de datos para seperar los valores en cada eje / [] indican la posición
+  //Se crea una variable de datos para seperar los valores en cada eje / [] indican la posición
   let datosAcel = {
-    x: parseInt(acel[1]),
+    /*x: parseInt(acel[1]),
     y: parseInt(acel[3]),
     z: parseInt(acel[5])
-  }//Por medio de la consola se muestran los datos de la variable datosAcel
+    */
+    x: parseFloat(acel[1]),
+    y: parseFloat(acel[3]),
+    z: parseFloat(acel[5])
+
+  }
+  //Por medio de la consola se muestran los datos de la variable datosAcel
   console.log(datosAcel);
   //Con el metodo emit de la instancia io se emiten los datos que se estan recibiendo en un evento llamado acel
   io.emit('acel', datosAcel)
