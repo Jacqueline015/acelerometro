@@ -24,16 +24,16 @@ socket.on('acel', function (data) {
 	console.log(ArrZ);
 
 	//SE CREA UN AUXILIAR PARA ARREGLO X de 10 VALORES
-	let auxX = new Array(200);
+	let auxX = new Array(60);
 
 	//SE CREA UN AUXILIAR PARA ARREGLO Y de 10 VALORES
-	let auxY = new Array(200);
+	let auxY = new Array(60);
 
 	//SE CREA UN AUXILIAR PARA ARREGLO Y de 10 VALORES
-	let auxZ = new Array(200);
+	let auxZ = new Array(60);
 
 	//SE CREA UN CONTADOR PARA RECORRER EL ARREGLO X
-	for (let i = 0; i < 199; i++) {
+	for (let i = 0; i < 59; i++) {
 		auxX[i + 1] = ArrX[i];
 		//console.log(`valores de aux en ciclo = ${aux}`);
 	}
@@ -42,7 +42,7 @@ socket.on('acel', function (data) {
 	ArrX[0] = data.x;
 
 	//SE CREA UN CONTADOR PARA RECORRER EL ARREGLO Y
-	for (let i = 0; i < 199; i++) {
+	for (let i = 0; i < 59; i++) {
 		auxY[i + 1] = ArrY[i];
 	}
 	ArrY = auxY;
@@ -50,7 +50,7 @@ socket.on('acel', function (data) {
 	ArrY[0] = data.y;
 
 	//SE CREA UN CONTADOR PARA RECORRER EL ARREGLO Z
-	for (let i = 0; i < 199; i++) {
+	for (let i = 0; i < 59; i++) {
 		auxZ[i + 1] = ArrZ[i];
 	}
 	ArrZ = auxZ;
@@ -81,22 +81,22 @@ const ctx3 = document.getElementById('myChart3');
 //Se crean las funciones con arreglos de 10 elementos.
 
 //ARREGLO DEL EJE X:
-let ArrX = new Array(200);
+let ArrX = new Array(60);
 console.log(ArrX);
 
 //ARREGLO DEL EJE Y:
-let ArrY = new Array(200);
+let ArrY = new Array(60);
 console.log(ArrY);
 
 //ARREGLO DEL EJE Z:
-let ArrZ = new Array(200);
+let ArrZ = new Array(60);
 console.log(ArrZ);
 
 //ARREGLO PARA EL GRAFICO EN EL EJE X
 function creaArreglo() {
 	var arregloxd = [];
 
-	for (let i = 0; i < 200; i++) {
+	for (let i = 0; i < 60; i++) {
 		arregloxd.push(i);
 	}
 	//console.log(arregloxd);
@@ -157,8 +157,8 @@ let graficaX = new Chart(ctx, {
 				}
 			},
             y: {
-                //suggestedMin: -160,
-                //suggestedMax: 50,
+                suggestedMin: -0.16,
+                suggestedMax: 0,
 				title: {
 					display: true,
 					text: 'aceleración [g]'
@@ -181,8 +181,8 @@ let graficaY = new Chart(ctx2, {
 				}
 			},
             y: {
-                //suggestedMin: 80,
-                //suggestedMax: 180,
+                suggestedMin: 0,
+                suggestedMax: 0.16,
 				title: {
 					display: true,
 					text: 'aceleración [g]'
@@ -205,8 +205,8 @@ let graficaZ = new Chart(ctx3, {
 				}
 			},
             y: {
-                //suggestedMin: 740,
-                //suggestedMax: 940,
+                suggestedMin: 0,
+                suggestedMax: 1,
 				title: {
 					display: true,
 					text: 'aceleración [g]'
