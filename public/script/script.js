@@ -92,8 +92,8 @@ console.log(ArrY);
 let ArrZ = new Array(60);
 console.log(ArrZ);
 
-//ARREGLO PARA EL GRAFICO EN EL EJE X
-function creaArreglo() {
+//ARREGLO PARA EL GRAFICO EN EL EJE EN EL TIEMPO
+function creaArregloT() {
 	var arregloxd = [];
 
 	for (let i = 0; i < 60; i++) {
@@ -103,7 +103,7 @@ function creaArreglo() {
 	return arregloxd;
 
 }
-let nuevoArr = creaArreglo();
+let nuevoArr = creaArregloT();
 
 //DISEÑO DEL GRÁFICO
 const labels = nuevoArr;
